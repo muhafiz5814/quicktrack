@@ -1,4 +1,6 @@
-import Task from "./Task"
+// import Task from "./Task"
+import addTask from "./addTask"
+import renderTasks from "./renderTasks"
 
 class RunningTask {
   constructor(title) {
@@ -57,7 +59,7 @@ class RunningTask {
 
     stopBtn.addEventListener("click", () => {
       this.stopTimer()
-      const task = new Task(this.title, this.startTime, this.timer)
+      addTask(this.title, this.startTime, new Date(), this.timer)
       const self = document.getElementById(this.startTime)
       self.remove()
         console.log(this.timer)
