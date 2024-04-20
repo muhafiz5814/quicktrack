@@ -40,6 +40,7 @@ class RunningTask {
   render() {
     const runningTaskContainer = document.createElement("div")
     runningTaskContainer.setAttribute("class", "running-task")
+    runningTaskContainer.setAttribute("id", this.startTime)
 
     const titleDiv = document.createElement("div")
     titleDiv.setAttribute("class", "running-task-title")
@@ -57,6 +58,8 @@ class RunningTask {
     stopBtn.addEventListener("click", () => {
       this.stopTimer()
       const task = new Task(this.title, this.startTime, this.timer)
+      const self = document.getElementById(this.startTime)
+      self.remove()
         console.log(this.timer)
     })
     stopBtnDiv.append(stopBtn)
