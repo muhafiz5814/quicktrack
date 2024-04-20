@@ -10,5 +10,35 @@ body {
   padding: 0px;
 }
 
+/* Below styling is only for development purpose. It will be updated later when the application will work as needed. */
 
+#start-tracking-container{
+  height: 100px;
+  width: 400px;
+  background-color: tomato;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+}
+
+#tracker{
+  height: 100px;
+  width: 400px;
+  background-color: tomato;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+}
+
+#tasks{
+  height: 100px;
+  width: 400px;
+  background-color: tomato;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+}
 
