@@ -1,3 +1,5 @@
+import Task from "./Task"
+
 class RunningTask {
   constructor(title) {
     this.title = title
@@ -5,6 +7,7 @@ class RunningTask {
     this.hours = 0
     this.minutes = 0
     this.seconds = 0
+    this.startTime = new Date()
     this.startTimer()
   }
 
@@ -30,13 +33,9 @@ class RunningTask {
     this.timerInterval = setInterval(this.updateTimer, 1000)
   }
 
-  // <div id="tracker">
-  //       <div id="tracker-title">Title</div>
-  //       <div id="timer">00:01:35</div>
-  //       <div id="stop-btn-box">
-  //         <button id="stop-btn">Stop</button>
-  //       </div>
-  // </div>
+  stopTimer () {
+    clearInterval(this.timerInterval)
+  }
 
   render() {
     const runningTaskContainer = document.createElement("div")
@@ -54,6 +53,12 @@ class RunningTask {
     const stopBtn = document.createElement("button")
     stopBtn.setAttribute("class", "stop-btn")
     stopBtn.innerText = "Stop"
+
+    stopBtn.addEventListener("click", () => {
+      this.stopTimer()
+      const task = new Task(this.title, this.startTime, this.timer)
+        console.log(this.timer)
+    })
     stopBtnDiv.append(stopBtn)
 
     titleDiv.innerText = this.title
