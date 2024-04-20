@@ -1,3 +1,10 @@
+/** * * * * *
+ * Keeping this file unmodified as it is the base logic of the application and will help in building the remaining part of the application.
+ * 
+ * It will be modified at the end 
+*/
+// import RunningTask from "./runningTask"
+
 const inputEl = document.getElementById("title-input")
 const startBtnEl = document.getElementById("start-btn")
 const initialTimeEl = document.getElementById("initial-time")
@@ -62,3 +69,14 @@ stopBtnEl.addEventListener("click", () => {
   `${startTime.getHours()}:${startTime.getMinutes()} - ${endTime.getHours()}:${endTime.getMinutes()}
   `
 })
+
+/** This code is to test the newly created RunningTasks feature */
+
+// let runningTasksEl = document.getElementById("running-tasks")
+// const tempBtn = document.getElementById("temp")
+
+// tempBtn.addEventListener("click", () => {
+//   const task1 = new RunningTask("Muhafiz")
+//   // console.log(task1.render())
+//   runningTasksEl.append(task1.render())
+// })

@@ -1,0 +1,68 @@
+class RunningTask {
+  constructor(title) {
+    this.title = title
+    this.timer = "00:00:00"
+    this.hours = 0
+    this.minutes = 0
+    this.seconds = 0
+    this.startTimer()
+  }
+
+  updateTimer = () => {
+    this.seconds += 1
+    if(this.seconds >= 60){
+      this.seconds = 0
+      this.minutes += 1
+    } if(this.minutes >= 60) {
+      this.minutes = 0
+      this.hours += 1
+    }
+    console.log(this.seconds)
+    console.log(this.minutes)
+    console.log(this.hours)
+  
+    const updatedTimer = `${(this.hours < 10) ? "0" + this.hours : this.hours}:${(this.minutes < 10) ? "0" + this.minutes : this.minutes}:${(this.seconds < 10) ? "0" + this.seconds : this.seconds}`
+    console.log(updatedTimer)
+    this.timer = updatedTimer
+  }
+
+  startTimer () {
+    this.timerInterval = setInterval(this.updateTimer, 1000)
+  }
+
+  // <div id="tracker">
+  //       <div id="tracker-title">Title</div>
+  //       <div id="timer">00:01:35</div>
+  //       <div id="stop-btn-box">
+  //         <button id="stop-btn">Stop</button>
+  //       </div>
+  // </div>
+
+  render() {
+    const runningTaskContainer = document.createElement("div")
+    runningTaskContainer.setAttribute("class", "running-task")
+
+    const titleDiv = document.createElement("div")
+    titleDiv.setAttribute("class", "running-task-title")
+
+    const timerDiv = document.createElement("div")
+    timerDiv.setAttribute("class", "timer")
+
+    const stopBtnDiv = document.createElement("div")
+    stopBtnDiv.setAttribute("class", "stop-btn-div")
+    
+    const stopBtn = document.createElement("button")
+    stopBtn.setAttribute("class", "stop-btn")
+    stopBtn.innerText = "Stop"
+    stopBtnDiv.append(stopBtn)
+
+    titleDiv.innerText = this.title
+    timerDiv.innerText = this.timer
+
+    runningTaskContainer.append(titleDiv, timerDiv, stopBtnDiv)
+
+    return runningTaskContainer
+  }
+}
+
+export default RunningTask
