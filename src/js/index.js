@@ -25,7 +25,7 @@ startBtnEl.addEventListener("click", () => {
 
 trackerBtnEl.addEventListener("click", () => {
   chartDivEl.classList.add("display-none")
-  mainPageEl.classList.remove("display-none")
+  mainPageEl.removeAttribute("style")
 })
 
 analyticsBtnEl.addEventListener("click", () => {
@@ -41,7 +41,7 @@ analyticsBtnEl.addEventListener("click", () => {
 
     return {title, totalMinutes}
   })
-  mainPageEl.classList.add("display-none")
+  mainPageEl.setAttribute("style", `display: none;`)
   chartDivEl.classList.remove("display-none")
   console.log(data)
   showChart(data)
