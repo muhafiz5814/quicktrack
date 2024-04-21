@@ -19,6 +19,10 @@ main{
   align-items: center;
 }
 
+input{
+  outline: none;
+}
+
 .btn{
   width: 70px;
   padding: 3px;
@@ -65,7 +69,6 @@ main{
   border: none;
   height: 100%;
   width: 100%;
-  outline: none;
 }
 
 #initial-time{
@@ -82,17 +85,70 @@ main{
   background-color: rgb(161, 161, 158);
 }
 
-#start-tracking-container-manual{
+/* Style for the Manual Task adder container begins here. */
+
+#tracking-initiater-manual{
+  /* height: 70px; */
+  /* box-sizing: border-box; */
+  width: 80%;
+  background-color: rgba(211, 211, 210, 0.525);
+  border: 1px solid rgb(188, 185, 185);
+  box-sizing: border-box;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+}
+#start-tracking-container-manual{
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  /* background-color: yellow; */
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+}
+
+#title-input-box-manual{
+  /* box-sizing: border-box; */
+  width: 95%;
+  margin: 5px;
+  border: 1px solid rgba(147, 145, 145, 0.829);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#title-input-manual{
+  /* box-sizing: border-box; */
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 3px;
 }
 
 #date-time-container-manual{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 5px;
+}
+
+#date-time-container-manual input{
+  border: 1px solid rgba(147, 145, 145, 0.829);
+  border-radius: 5px;
+}
+
+#end-time-input-box-manual{
+  margin: 0 5px;
+}
+
+#add-btn-box{
+  margin: 5px;
+}
+
+#add-btn{
+  background-color: rgb(161, 161, 158);
 }
 
 /* Style for the Running Tasks container begins here. */
