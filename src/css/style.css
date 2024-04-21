@@ -82,6 +82,19 @@ main{
   background-color: rgb(161, 161, 158);
 }
 
+#start-tracking-container-manual{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#date-time-container-manual{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 /* Style for the Running Tasks container begins here. */
 #running-tasks{
   width: 80%;

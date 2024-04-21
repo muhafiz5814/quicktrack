@@ -65,7 +65,7 @@ class RunningTask {
 
     stopBtn.addEventListener("click", () => {
       this.stopTimer()
-      addTask(this.title, this.startTime, new Date(), this.timer, this.timeStamp)
+      addTask(this.title, this.startTime, new Date(), this.startTime, this.timer, this.timeStamp)
       const self = document.getElementById(this.startTime)
       self.remove()
         console.log(this.timer)
