@@ -1,0 +1,35 @@
+header{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  background-color: rgba(125, 124, 124);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+#site-title{
+  flex: 3;
+  padding-left: 25px;
+  font-family: sans-serif;
+}
+
+header nav{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-btn{
+  border: 1px solid rgba(121, 118, 118, 0.728);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 7px;
+}
+
+.active1{
+  background-color:rgb(124, 182, 234);
+}

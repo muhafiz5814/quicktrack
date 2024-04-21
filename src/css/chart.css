@@ -1,0 +1,13 @@
+#chart-div{
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  z-index: 2;
+  background-color: white;
+}
+
+.display-none{
+  display: none;
+}

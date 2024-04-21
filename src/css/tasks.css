@@ -1,0 +1,67 @@
+/* Style for Tasks container begins here. */
+#tasks{
+  width: 100%;
+  background-color: rgba(211, 211, 210, 0.525);
+  border: 1px solid rgb(188, 185, 185);
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  z-index: 1;
+}
+
+.task{
+  width: 100%;
+  background-color: rgb(211, 211, 210);
+  border-bottom: 1px solid rgb(163, 163, 163);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.task-title{
+  flex: 6;
+  padding: 3px;
+  background-color: rgba(155, 155, 156, 0.696);
+  font-weight:600;
+}
+
+.from-to-till{
+  flex: 2;
+  padding: 5px;
+}
+
+.task-date{
+  flex: 2;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 5px;
+}
+
+.total-duration{
+  flex: 2;
+  padding: 5px;
+}
+
+.remove-btn-box{
+  flex: 1;
+}
+
+.remove-btn{
+  font-size: x-small;
+}
+
+@media screen and (max-width: 790px) {
+  .task{
+    flex-direction: column;
+    border-right: 1px solid rgb(163, 163, 163);
+  }
+}

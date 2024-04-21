@@ -1,0 +1,50 @@
+/* Style for the Tracking Initiater begins here */
+#tracking-initiater{
+  height: 70px;
+  width: 90%;
+  max-width: 650px;
+  background-color: rgba(211, 211, 210, 0.525);
+  border: 1px solid rgb(188, 185, 185);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+  z-index: 1;
+}
+
+#start-tracking-container{
+  height: 80%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+#title-input-box{
+  height: 60%;
+  text-align: center;
+  box-sizing: border-box;
+  flex: 3;
+  overflow: hidden;
+  border: 1px solid rgba(147, 145, 145, 0.829);
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+#title-input{
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+#start-btn-box{
+  text-align: center;
+  flex: 1;
+}
+
+#start-btn{
+  background-color: rgb(161, 161, 158);
+}
