@@ -1,9 +1,14 @@
 import renderTasks from "./renderTasks"
 
 export default function (title, startTime, endTime, taskDate, duration, timeStamp) {
+
+  let startTime1 = `${startTime.getHours() < 10 ? "0" + startTime.getHours() : startTime.getHours()}:${startTime.getMinutes() < 10 ? "0" + startTime.getMinutes() : startTime.getMinutes()}`
+
+  let endTime1 = `${endTime.getHours() < 10 ? "0" + endTime.getHours() : endTime.getHours()}:${endTime.getMinutes() < 10 ? "0" + endTime.getMinutes() : endTime.getMinutes()}`
+  
   const taskObject = {
     title,
-    fromToTill: `${startTime.getHours()}:${startTime.getMinutes()} - ${endTime.getHours()}:${endTime.getMinutes()}`,
+    fromToTill: `${startTime1} - ${endTime1}`,
     taskDate: `${taskDate.toDateString()}`,
     duration,
     timeStamp
