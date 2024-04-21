@@ -60,7 +60,7 @@ class RunningTask {
     stopBtnDiv.setAttribute("class", "stop-btn-div")
     
     const stopBtn = document.createElement("button")
-    stopBtn.setAttribute("class", "stop-btn")
+    stopBtn.setAttribute("class", "stop-btn btn")
     stopBtn.innerText = "Stop"
 
     stopBtn.addEventListener("click", () => {
@@ -73,7 +73,7 @@ class RunningTask {
     stopBtnDiv.append(stopBtn)
 
     titleDiv.innerText = this.title
-    timerDiv.innerText = this.timer
+    timerDiv.innerText = `Tracking...`
     contentDiv.append(titleDiv, timerDiv)
     runningTaskContainer.append(contentDiv, stopBtnDiv)
 

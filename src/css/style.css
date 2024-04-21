@@ -8,6 +8,7 @@ html,
 body {
   margin: 0px;
   padding: 0px;
+  background-color:rgb(233, 235, 238);
 }
 
 main{
@@ -35,7 +36,8 @@ input{
 /* Style for the Tracking Initiater begins here */
 #tracking-initiater{
   height: 70px;
-  width: 80%;
+  width: 90%;
+  max-width: 650px;
   background-color: rgba(211, 211, 210, 0.525);
   border: 1px solid rgb(188, 185, 185);
   box-sizing: border-box;
@@ -63,6 +65,7 @@ input{
   overflow: hidden;
   border: 1px solid rgba(147, 145, 145, 0.829);
   border-radius: 5px;
+  margin-right: 5px;
 }
 
 #title-input{
@@ -88,9 +91,8 @@ input{
 /* Style for the Manual Task adder container begins here. */
 
 #tracking-initiater-manual{
-  /* height: 70px; */
-  /* box-sizing: border-box; */
-  width: 80%;
+  width: 90%;
+  max-width: 650px;
   background-color: rgba(211, 211, 210, 0.525);
   border: 1px solid rgb(188, 185, 185);
   box-sizing: border-box;
@@ -103,7 +105,6 @@ input{
   box-sizing: border-box;
   width: 100%;
   display: flex;
-  /* background-color: yellow; */
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -111,7 +112,6 @@ input{
 }
 
 #title-input-box-manual{
-  /* box-sizing: border-box; */
   width: 95%;
   margin: 5px;
   border: 1px solid rgba(147, 145, 145, 0.829);
@@ -120,7 +120,6 @@ input{
 }
 
 #title-input-manual{
-  /* box-sizing: border-box; */
   height: 100%;
   width: 100%;
   border: none;
@@ -153,59 +152,9 @@ input{
 
 /* Style for the Running Tasks container begins here. */
 #running-tasks{
-  width: 80%;
-  background-color: rgba(211, 211, 210, 0.525);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 10px;
-}
-
-.running-task{
-  height: 80%;
   width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.content-box{
-  width: 95%;
-  background-color: rgb(63, 191, 63);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 5px;
-}
-
-.running-task-title{
-  text-align: center;
-  padding: 5px;
-  
-}
-
-.timer{
-  text-align: center;
-  
-}
-
-.stop-btn-div{
-  margin: 5px;
-}
-
-.stop-btn{
-  background-color: rgb(241, 35, 35);
-}
-
-/* Style for Tasks container begins here. */
-#tasks{
-  height: 70px;
-  width: 80%;
   background-color: rgba(211, 211, 210, 0.525);
   border: 1px solid rgb(188, 185, 185);
-  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -213,11 +162,126 @@ input{
   margin: 10px;
 }
 
-.task{
-  width: 400px;
-  background-color: yellow;
+.running-task{
+
+  width: 100%;
+  border-bottom: 1px solid rgb(195, 195, 195);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px;
+}
+
+.content-box{
+  width: 95%;
+  background-color: rgb(214, 214, 208);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin: 5px;
+  padding: 5px;
+}
+
+.running-task-title{
+  padding: 5px;
+  padding-left: 25px;
+  flex: 4;
+  font-size: medium;
+  border-bottom: 1px solid rgb(138, 138, 138);
+}
+
+.timer{
+  text-align: center;
+  flex: 2;
+  background-color: rgba(0, 255, 0, 0.842);
+}
+
+.stop-btn-div{
+  margin: 5px;
+}
+
+.stop-btn{
+  background-color: rgba(253, 25, 25, 0.687);
+}
+
+/* Style for Tasks container begins here. */
+#tasks{
+  width: 100%;
+  background-color: rgba(211, 211, 210, 0.525);
+  border: 1px solid rgb(188, 185, 185);
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   margin: 10px;
+}
+
+.task{
+  width: 100%;
+  background-color: rgb(211, 211, 210);
+  border-bottom: 1px solid rgb(163, 163, 163);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.task-title{
+  flex: 6;
+  padding: 3px;
+  background-color: rgba(155, 155, 156, 0.696);
+  font-weight:600;
+}
+
+.from-to-till{
+  flex: 2;
+  padding: 5px;
+}
+
+.task-date{
+  flex: 2;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 5px;
+}
+
+.total-duration{
+  flex: 2;
+  padding: 5px;
+}
+
+.remove-btn-box{
+  flex: 1;
+}
+
+.remove-btn{
+  font-size: x-small;
+}
+
+@media screen and (max-width: 790px) {
+  .task{
+    flex-direction: column;
+    border-right: 1px solid rgb(163, 163, 163);
+  }
+}
+
+@media screen and (max-width: 290px){
+  .task{
+    width: 100%;
+  }
+
+  #date-time-container-manual{
+    flex-wrap: wrap;
+  }
+
+  #date-time-container-manual input{
+    margin-bottom: 5px;
+  }
 }
