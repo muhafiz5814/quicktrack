@@ -47,6 +47,9 @@ class RunningTask {
     runningTaskContainer.setAttribute("class", "running-task")
     runningTaskContainer.setAttribute("id", this.startTime)
 
+    const contentDiv = document.createElement("div")
+    contentDiv.setAttribute("class", "content-box")
+
     const titleDiv = document.createElement("div")
     titleDiv.setAttribute("class", "running-task-title")
 
@@ -71,8 +74,8 @@ class RunningTask {
 
     titleDiv.innerText = this.title
     timerDiv.innerText = this.timer
-
-    runningTaskContainer.append(titleDiv, timerDiv, stopBtnDiv)
+    contentDiv.append(titleDiv, timerDiv)
+    runningTaskContainer.append(contentDiv, stopBtnDiv)
 
     return runningTaskContainer
   }
