@@ -1,8 +1,10 @@
-document.querySelectorAll('.task').forEach(e => e.remove());
 
-const tasksDiv = document.getElementById("tasks")
 
 export default function () {
+
+  document.querySelectorAll('.task').forEach(e => e.remove());
+
+  const tasksDiv = document.getElementById("tasks")
 
   let tasks = JSON.parse(localStorage.getItem("tasks"))
   console.log(tasks)
@@ -11,8 +13,10 @@ export default function () {
     for(let i = 0; i < tasks.length; i++){
       let task = tasks[i]
       console.log(task)
+
       const taskDiv = document.createElement("div")
       taskDiv.setAttribute("class", "task")
+      taskDiv.setAttribute("id", task.timeStamp)
 
       const taskTitleDiv = document.createElement("div")
       taskTitleDiv.setAttribute("class", "task-title")
@@ -30,7 +34,16 @@ export default function () {
       removeBtnDiv.setAttribute("class", "remove-btn-box")
       const removeBtn = document.createElement("button")
       removeBtn.setAttribute("class", "remove-btn")
-      removeBtn.innerText = "X"
+
+      removeBtn.addEventListener("click", () => {
+        document.getElementById(task.timeStamp).remove()
+        let tasks = JSON.parse(localStorage.getItem("tasks"))
+        let updatedTasks = tasks.filter((t) => t.timeStamp != task.timeStamp)
+
+        localStorage.setItem("tasks", JSON.stringify(updatedTasks))
+      })
+      removeBtn.innerText = "x"
+      
       removeBtnDiv.append(removeBtn)
 
       taskTitleDiv.innerText = task.title

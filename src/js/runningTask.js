@@ -10,6 +10,7 @@ class RunningTask {
     this.minutes = 0
     this.seconds = 0
     this.startTime = new Date()
+    this.timeStamp = Date.now()
     this.startTimer()
   }
 
@@ -29,6 +30,8 @@ class RunningTask {
     const updatedTimer = `${(this.hours < 10) ? "0" + this.hours : this.hours}:${(this.minutes < 10) ? "0" + this.minutes : this.minutes}:${(this.seconds < 10) ? "0" + this.seconds : this.seconds}`
     console.log(updatedTimer)
     this.timer = updatedTimer
+    // date = new Date().now()
+    // console.log(Date.now() + "")
   }
 
   startTimer () {
@@ -59,7 +62,7 @@ class RunningTask {
 
     stopBtn.addEventListener("click", () => {
       this.stopTimer()
-      addTask(this.title, this.startTime, new Date(), this.timer)
+      addTask(this.title, this.startTime, new Date(), this.timer, this.timeStamp)
       const self = document.getElementById(this.startTime)
       self.remove()
         console.log(this.timer)

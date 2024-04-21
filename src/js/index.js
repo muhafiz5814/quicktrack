@@ -4,11 +4,14 @@
  * It will be modified at the end 
 */
 import RunningTask from "./runningTask"
+import renderTasks from "./renderTasks"
 
 const inputEl = document.getElementById("title-input")
 const startBtnEl = document.getElementById("start-btn")
 
 let runningTasksEl = document.getElementById("running-tasks")
+
+renderTasks()
 
 startBtnEl.addEventListener("click", () => {
   const task1 = new RunningTask(inputEl.value)
