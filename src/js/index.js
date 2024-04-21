@@ -48,6 +48,8 @@ startBtnEl.addEventListener("click", () => {
 trackerBtnEl.addEventListener("click", () => {
   chartDivEl.classList.add("display-none")
   mainPageEl.removeAttribute("style")
+  analyticsBtnEl.classList.remove("active1")
+  trackerBtnEl.classList.add("active1")
 })
 
 analyticsBtnEl.addEventListener("click", () => {
@@ -65,6 +67,8 @@ analyticsBtnEl.addEventListener("click", () => {
   })
   mainPageEl.setAttribute("style", `display: none;`)
   chartDivEl.classList.remove("display-none")
+  trackerBtnEl.classList.remove("active1")
+  analyticsBtnEl.classList.add("active1")
   console.log(data)
   showChart(data)
 })
