@@ -1,5 +1,3 @@
-
-
 export default function () {
 
   document.querySelectorAll('.task').forEach(e => e.remove());

@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your JavaScript Playground</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <main>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Tracker</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div id="site-title">QuickTrack</div>
+    <nav>
+      <div id="tracker-btn-box">
+        <button id="tracker-btn" class="nav-btn">Tracker</button>
+      </div>
+      <div id="analytics-btn-box">
+        <button id="analytics-btn" class="nav-btn">Analytics</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div id="main-page">
       <div id="tracking-initiater">
         <div id="start-tracking-container">
           <div id="title-input-box">
-            <input id="title-input" type="text" />  
+            <input id="title-input" type="text" />
           </div>
           <div id="start-btn-box">
             <button id="start-btn" class="btn">Start</button>
@@ -22,17 +36,17 @@
       <div id="tracking-initiater-manual">
         <div id="start-tracking-container-manual">
           <div id="title-input-box-manual">
-            <input type="text" id="title-input-manual">
+            <input type="text" id="title-input-manual" />
           </div>
           <div id="date-time-container-manual">
             <div id="start-time-input-box-manual">
-              <input type="time" id="start-time-input-manual">
+              <input type="time" id="start-time-input-manual" />
             </div>
             <div id="end-time-input-box-manual">
-              <input type="time" id="end-time-input-manual">
+              <input type="time" id="end-time-input-manual" />
             </div>
             <div id="start-date-input-box-manual">
-              <input type="date" id="start-date-input-manual">
+              <input type="date" id="start-date-input-manual" />
             </div>
           </div>
           <div id="add-btn-box">
@@ -44,9 +58,15 @@
       <div id="running-tasks"></div>
 
       <div id="tasks"></div>
+    </div>
 
-    </main>
-    <script type="module" src="js/index.js"></script>
-    <script type="module" src="js/addManual.js"></script>
-  </body>
+    <div id="chart-div" class="display-none">
+      <canvas id="myChart" style="width: 500px"></canvas>
+    </div>
+  </main>
+
+  <script type="module" src="js/index.js"></script>
+  <script type="module" src="js/addManual.js"></script>
+</body>
+
 </html>
