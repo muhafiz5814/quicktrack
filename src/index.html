@@ -22,10 +22,15 @@
   </header>
   <main>
     <div id="main-page">
+      <div id="entry-type">
+        <div id="auto-btn-box"><button id="auto-btn" class="auto-btn active">Auto</button></div>
+        <div id="manual-btn-box"><button id="manual-btn" class="manual-btn">Manual</button></div>
+      </div>
+
       <div id="tracking-initiater">
         <div id="start-tracking-container">
           <div id="title-input-box">
-            <input id="title-input" type="text" />
+            <input id="title-input" type="text" placeholder="Enter task title here"/>
           </div>
           <div id="start-btn-box">
             <button id="start-btn" class="btn">Start</button>
@@ -33,19 +38,23 @@
         </div>
       </div>
 
-      <div id="tracking-initiater-manual">
+      <div id="tracking-initiater-manual" style="display: none;">
         <div id="start-tracking-container-manual">
           <div id="title-input-box-manual">
-            <input type="text" id="title-input-manual" />
+            <input type="text" id="title-input-manual" placeholder="Enter task title here"/>
           </div>
           <div id="date-time-container-manual">
+            
             <div id="start-time-input-box-manual">
+              <label for="start-date-input-manual">From</label>
               <input type="time" id="start-time-input-manual" />
             </div>
             <div id="end-time-input-box-manual">
+              <label for="end-time-input-manual">To</label>
               <input type="time" id="end-time-input-manual" />
             </div>
             <div id="start-date-input-box-manual">
+              <label for="start-date-input-manual">Date</label>
               <input type="date" id="start-date-input-manual" />
             </div>
           </div>

@@ -62,6 +62,34 @@ input{
   font-size:small;
 }
 
+#entry-type{
+  display: flex;
+  margin-top: 10px;
+  /* border: 2px solid black;
+  border-radius: 15px; */
+  overflow: hidden;
+}
+
+#entry-type button{
+  width: 60px;
+}
+
+.auto-btn{
+  /* border: 1px solid black; */
+  background-color: rgb(88, 88, 88);
+  color: white;
+}
+
+.manual-btn{
+  background-color: rgb(88, 88, 88);
+  color: white;
+}
+
+.active{
+  background-color: rgb(224, 220, 220);
+  color: black;
+}
+
 /* Style for the Tracking Initiater begins here */
 #tracking-initiater{
   height: 70px;

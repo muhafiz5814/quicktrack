@@ -15,7 +15,29 @@ const mainPageEl = document.getElementById("main-page")
 
 const chartDivEl = document.getElementById("chart-div")
 
+const autoBtnEl = document.getElementById("auto-btn")
+
+const manualBtnEl = document.getElementById("manual-btn")
+
+const trackingInitiaterEl = document.getElementById("tracking-initiater")
+
+const trackingInitiaterManualEl = document.getElementById("tracking-initiater-manual")
+
 renderTasks()
+
+autoBtnEl.addEventListener("click", () => {
+  trackingInitiaterEl.removeAttribute("style")
+  trackingInitiaterManualEl.setAttribute("style", "display: none;")
+  manualBtnEl.classList.remove("active")
+  autoBtnEl.classList.add("active")
+})
+
+manualBtnEl.addEventListener("click", () => {
+  trackingInitiaterManualEl.removeAttribute("style")
+  trackingInitiaterEl.setAttribute("style", "display: none;")
+  autoBtnEl.classList.remove("active")
+  manualBtnEl.classList.add("active")
+})
 
 startBtnEl.addEventListener("click", () => {
   const task1 = new RunningTask(inputEl.value)
