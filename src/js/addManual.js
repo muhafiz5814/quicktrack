@@ -14,7 +14,7 @@ const getDuration = (start, end) => {
   let minutes = Math.floor(Math.abs(diff/60000))
   diff = diff % 60000
   let seconds = Math.floor(Math.abs(diff / 1000))
-  
+
   return `${(hours < 10) ? "0" + hours : hours}:${(minutes < 10) ? "0" + minutes : minutes}:${(seconds < 10) ? "0" + seconds : seconds}`
 }
 
@@ -34,4 +34,9 @@ addBtnEl.addEventListener("click", () => {
   const duration = getDuration(startTime, endTime)
   
   addTask(title, startTime, endTime, startDate, duration, Date.now())
+
+  titleElManual.value = ""
+  startTimeElManual.value = ""
+  endTimeElManual.value = ""
+  startDateElManual.value = ""
 })
