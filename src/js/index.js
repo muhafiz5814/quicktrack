@@ -1,5 +1,6 @@
 import RunningTask from "./runningTask"
 import renderTasks from "./renderTasks"
+import addManual from "./addManual"
 import showChart from "./chart"
 
 const inputEl = document.getElementById("title-input")
@@ -18,6 +19,8 @@ const chartDivEl = document.getElementById("chart-div")
 const autoBtnEl = document.getElementById("auto-btn")
 
 const manualBtnEl = document.getElementById("manual-btn")
+
+const addBtnEl = document.getElementById("add-btn")
 
 const trackingInitiaterEl = document.getElementById("tracking-initiater")
 
@@ -43,6 +46,10 @@ startBtnEl.addEventListener("click", () => {
   const task1 = new RunningTask(inputEl.value)
   runningTasksEl.prepend(task1.render())
   inputEl.value = ""
+})
+
+addBtnEl.addEventListener("click", () => {
+  addManual()
 })
 
 trackerBtnEl.addEventListener("click", () => {
