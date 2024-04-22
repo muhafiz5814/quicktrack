@@ -5,6 +5,7 @@ export default function () {
   document.querySelectorAll('.task').forEach(e => e.remove());
 
   const tasksDiv = document.getElementById("tasks")
+  tasksDiv.innerText = ""
 
   // Get the existing tasks from localStorage.
   let tasks = JSON.parse(localStorage.getItem("tasks"))

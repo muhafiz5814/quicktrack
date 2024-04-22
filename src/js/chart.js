@@ -5,9 +5,19 @@ import Chart from 'chart.js/auto'
  * @param {Array} Array of objects, containing value for x and y axis.
  */
 export default function(data) {
+
+  // Remove the existing canvas element
+  const chartEl = document.getElementById("myChart")
+  chartEl.remove()
+
+  // Create a new canvas element to chartDiv and use it to show chart.
+  const chartDivEl = document.getElementById("chart-div")
+  const canvasEl = document.createElement("canvas")
+  canvasEl.setAttribute("id", "myChart")
+  chartDivEl.append(canvasEl)
   
   new Chart(
-    document.getElementById('myChart'),
+    canvasEl,
     {
       type: 'bar',
       data: {
