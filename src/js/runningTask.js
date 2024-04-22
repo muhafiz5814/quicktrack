@@ -1,8 +1,20 @@
-// import Task from "./Task"
 import addTask from "./addTask"
-import renderTasks from "./renderTasks"
 
+/** Class to create the instances of tasks which are currently being tracked. */
 class RunningTask {
+  /**
+   * Initializes different class properties.
+   * 
+   * @param {String} title holds the task title to be tracked
+   * 
+   * hours, minutes, seconds properties are needed to update the timer which is tracking the task.
+   * 
+   * timer property is to store the timer value and pass it further when ending the tracking.
+   * 
+   * startTime property is to store the time when the tracking was started
+   * 
+   * timeStamp property is to store a unique value for each task to identify later in arrays and DOM.
+   */
   constructor(title) {
     this.title = title
     this.timer = "00:00:00"
@@ -14,6 +26,7 @@ class RunningTask {
     this.startTimer()
   }
 
+  // Updates the timer string.
   updateTimer = () => {
     this.seconds += 1
     if(this.seconds >= 60){
@@ -23,25 +36,23 @@ class RunningTask {
       this.minutes = 0
       this.hours += 1
     }
-    console.log(this.seconds)
-    console.log(this.minutes)
-    console.log(this.hours)
   
     const updatedTimer = `${(this.hours < 10) ? "0" + this.hours : this.hours}:${(this.minutes < 10) ? "0" + this.minutes : this.minutes}:${(this.seconds < 10) ? "0" + this.seconds : this.seconds}`
-    console.log(updatedTimer)
     this.timer = updatedTimer
-    // date = new Date().now()
-    // console.log(Date.now() + "")
   }
 
+  // Start tracking the task using setInterval method which will be executing every 1000ms(1s).
   startTimer () {
+    // setInterval returns an interval interface which needs to be stopped or clear when we want to stop the setInterval.
     this.timerInterval = setInterval(this.updateTimer, 1000)
   }
 
+  // Stop the setInterval using clearInterval() method
   stopTimer () {
     clearInterval(this.timerInterval)
   }
 
+  // Renders the newly created runningTask element.
   render() {
     const runningTaskContainer = document.createElement("div")
     runningTaskContainer.setAttribute("class", "running-task")
@@ -63,12 +74,15 @@ class RunningTask {
     stopBtn.setAttribute("class", "stop-btn btn")
     stopBtn.innerText = "Stop"
 
+    /** This event listener stops the tracking and adds task to the localStorage.
+     * 
+     * Also removes the self element from the DOM.
+     */
     stopBtn.addEventListener("click", () => {
       this.stopTimer()
       addTask(this.title, this.startTime, new Date(), this.startTime, this.timer, this.timeStamp)
       const self = document.getElementById(this.startTime)
       self.remove()
-        console.log(this.timer)
     })
     stopBtnDiv.append(stopBtn)
 

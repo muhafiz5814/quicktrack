@@ -1,5 +1,9 @@
 import Chart from 'chart.js/auto'
 
+/** Creates a new Chart instance and creates a chart using chart.js library.
+ * 
+ * @param {Array} Array of objects, containing value for x and y axis.
+ */
 export default function(data) {
   
   new Chart(
